@@ -1,6 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases de Latín y Griego Clásico</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            .btn-primary {
+                @apply bg-white text-264653 py-3 px-8 rounded-full transition-transform duration-300 hover:scale-105;
+            }
+            .form-input {
+                @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-4A6982;
+            }
+            .card-shadow {
+                @apply shadow-md hover:shadow-xl;
+            }
+            .section-heading {
+                @apply relative pb-4;
+            }
+            .section-heading::after {
+                content: '';
+                @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-B8860B rounded-full;
+            }
+        }
+        @layer utilities {
+            .text-4A6982 { color: #4A6982; }
+            .bg-gradient-to-br.from-4A6982 { --tw-gradient-from: #4A6982 var(--tw-gradient-from-position); --tw-gradient-to: rgb(74 105 130 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+            .to-264653 { --tw-gradient-to: #264653 var(--tw-gradient-to-position); }
+            .text-B8860B { color: #B8860B; }
+            .bg-36454F { background-color: #36454F; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
 
-<!-- Header Section -->
-<header class="bg-white shadow-sm py-4 px-6 md:px-12 border-b border-gray-200">
+<header class="bg-white shadow-sm py-4 px-6 md:px-12 border-b border-gray-200 sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
             <span class="text-4A6982">拉丁文與希臘文</span>
@@ -16,7 +53,6 @@
     </div>
 </header>
 
-<!-- Hero Section -->
 <section class="bg-gradient-to-br from-4A6982 to-264653 text-white py-16 md:py-24 text-center">
     <div class="container mx-auto px-6">
         <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
@@ -32,13 +68,11 @@
     </div>
 </section>
 
-<!-- Problem & Solution Section -->
 <section id="nuestro-enfoque" class="py-16 md:py-20 px-6 md:px-12">
     <div class="container mx-auto max-w-4xl">
-        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center section-heading">
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center section-heading">
             超越表面：我們獨特的教學理念
         </h3>
-
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h4 class="text-2xl font-semibold text-gray-700 mb-4">當前教育的挑戰</h4>
@@ -64,30 +98,28 @@
     </div>
 </section>
 
-<!-- Why Classics Section -->
-<section id="por-que-clasicas" class="bg-gray-50 py-16 md:py-20 px-6 md:px-12">
+<section id="por-que-clasicas" class="bg-gray-100 py-16 md:py-20 px-6 md:px-12">
     <div class="container mx-auto max-w-4xl text-center">
-        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 section-heading">
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 section-heading">
             為何學習拉丁文與古典希臘文？
         </h3>
         <p class="text-xl text-gray-700 mb-10">
             這些語言不僅是學科；它們是我們文明的根源，也是磨練您思維的最強大工具。
         </p>
-
         <div class="grid md:grid-cols-3 gap-8 text-left">
-            <div class="bg-white p-6 rounded-md card-shadow hover:card-shadow transition-shadow duration-300">
+            <div class="bg-white p-6 rounded-lg card-shadow transition-shadow duration-300">
                 <h4 class="text-xl font-semibold text-4A6982 mb-3">智識基礎</h4>
                 <p class="text-gray-700">
                     直接接觸西方哲學、文學、法律和科學的源頭。理解這些語言就是理解塑造世界的思想。
                 </p>
             </div>
-            <div class="bg-white p-6 rounded-md card-shadow hover:card-shadow transition-shadow duration-300">
+            <div class="bg-white p-6 rounded-lg card-shadow transition-shadow duration-300">
                 <h4 class="text-xl font-semibold text-4A6982 mb-3">邏輯思維發展</h4>
                 <p class="text-gray-700">
                     其嚴謹的語法和句法能磨練您的邏輯、對細節的關注以及分析能力，這些都是任何學科的關鍵技能。
                 </p>
             </div>
-            <div class="bg-white p-6 rounded-md card-shadow hover:card-shadow transition-shadow duration-300">
+            <div class="bg-white p-6 rounded-lg card-shadow transition-shadow duration-300">
                 <h4 class="text-xl font-semibold text-4A6982 mb-3">提升母語能力</h4>
                 <p class="text-gray-700">
                     豐富您的詞彙量，提高對母語的理解，讓您能更清晰、更精確地表達自己。
@@ -97,14 +129,13 @@
     </div>
 </section>
 
-<!-- Benefits Section -->
 <section id="beneficios" class="py-16 md:py-20 px-6 md:px-12">
     <div class="container mx-auto max-w-4xl text-center">
-        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 section-heading">
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 section-heading">
             我們的課程能為您帶來什麼？
         </h3>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-md card-shadow flex items-start space-x-4">
+        <div class="space-y-6 text-left">
+             <div class="bg-white p-6 rounded-md card-shadow flex items-start space-x-4">
                 <div class="flex-shrink-0 text-B8860B text-3xl">✓</div>
                 <div>
                     <h4 class="text-xl font-semibold text-gray-700 mb-2">全面且真正的掌握</h4>
@@ -144,7 +175,7 @@
     </div>
 </section>
 
-<!-- Call to Action / Contact Section -->
+
 <section id="contacto" class="bg-gradient-to-br from-4A6982 to-264653 text-white py-16 md:py-20 text-center">
     <div class="container mx-auto px-6 max-w-2xl">
         <h3 class="text-3xl md:text-4xl font-bold mb-6">
@@ -154,7 +185,7 @@
             如果您正在尋求超越表面、透過掌握拉丁文和希臘文獲得真正智識能力的準備，請填寫以下表單聯絡我們。
         </p>
 
-        <form action="mailto:caramessanchez@hotmail.com?subject=拉丁文與希臘文課程諮詢" method="post" enctype="text/plain" class="bg-white p-8 rounded-lg shadow-xl text-gray-700 text-left">
+        <form action="https://formspree.io/f/YOUR_UNIQUE_CODE" method="POST" class="bg-white p-8 rounded-lg shadow-xl text-gray-700 text-left max-w-lg mx-auto">
             <div class="mb-6">
                 <label for="name" class="block text-lg font-semibold mb-2">姓名 (Name)</label>
                 <input type="text" id="name" name="姓名" class="form-input" placeholder="請輸入您的姓名" required>
@@ -171,18 +202,20 @@
                 發送訊息
             </button>
             <p class="text-sm text-gray-600 mt-4 text-center">
-                * 提交後，您的預設郵件客戶端將會開啟以發送郵件。
+                * Le he cambiado la acción del formulario por un servicio gratuito (Formspree) para que funcione correctamente. El método "mailto:" no es fiable. Deberá crear una cuenta en Formspree para obtener su código único.
             </p>
         </form>
 
-<p class="mt-8 text-lg opacity-90">或造訪我們的 Facebook 頁面：<a href="https://www.facebook.com/profile.php?id=100064221575778" target="_blank" class="underline hover:text-blue-200">Facebook 頁面</a></p>
+        <p class="mt-8 text-lg opacity-90">También puede visitar nuestra página de <a href="#" class="underline hover:text-blue-200">Facebook</a>.</p>
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="bg-36454F text-white py-8 px-6 md:px-12 text-center">
     <div class="container mx-auto">
         <p>&copy; 2025 拉丁文與古典希臘文課程。版權所有。</p>
         <p class="mt-2 text-sm opacity-80">為智識卓越而設計。</p>
     </div>
 </footer>
+
+</body>
+</html>
