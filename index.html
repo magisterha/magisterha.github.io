@@ -2,7 +2,6 @@
 <html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <!-- META DESCRIPCIÓN ACTUALIZADA -->
     <meta name="description" content="在AI時代，我們的拉丁文與希臘文課程專注於建立無法被取代的深度思維。這是一場獻給未來的思維革命，為孩子培養核心判斷力、跨域整合力與創造力。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>拉丁文與古典希臘文課程 | 智識卓越</title>
@@ -10,16 +9,25 @@
     <!-- 1. SCRIPT DE TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 2. CONFIGURACIÓN PARA ESTILOS PERSONALIZADOS -->
+    <!-- 2. FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- 3. CONFIGURACIÓN PARA ESTILOS PERSONALIZADOS -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              'serif': ['Merriweather', 'serif'],
+            },
             colors: {
-              'primario': '#4A6982',
-              'primario-oscuro': '#264653',
-              'secundario': '#B8860B',
-              'footer-bg': '#36454F',
+              'academic-bg': '#FDFBF6',
+              'academic-text': '#3C3633',
+              'academic-primary': '#4A6982',
+              'academic-accent': '#76323F',
+              'academic-footer': '#333A45',
             }
           }
         }
@@ -29,189 +37,246 @@
     <!-- Estilos adicionales para elementos específicos -->
     <style type="text/tailwindcss">
         @layer base {
-            h3 {
-                @apply text-3xl md:text-4xl font-bold text-gray-800;
+            body {
+                @apply font-serif bg-academic-bg text-academic-text;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-bold text-academic-primary;
+            }
+            h3.section-heading {
+                @apply text-3xl md:text-4xl font-bold text-center text-academic-primary;
             }
         }
         .section-heading::after {
             content: '';
-            @apply block w-24 h-1 bg-secundario rounded-full mx-auto mt-4;
+            @apply block w-20 h-0.5 bg-academic-accent rounded-full mx-auto mt-4;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-header svg {
+             transition: transform 0.3s ease-out;
+        }
+        .accordion-header.open svg {
+            transform: rotate(180deg);
         }
     </style>
 
 </head>
-<body class="bg-white text-gray-700">
+<body>
 
-    <!-- Header Section con navegación actualizada -->
-    <header class="bg-white shadow-sm py-4 px-6 md:px-12 border-b border-gray-200 sticky top-0 z-50">
+    <!-- Header Section -->
+    <header class="bg-academic-bg/80 backdrop-blur-sm shadow-sm py-4 px-6 md:px-12 border-b border-gray-200 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl md:text-3xl font-bold text-primario">
-                拉丁文與希臘文
+            <h1 class="text-2xl md:text-3xl">
+                智識卓越
             </h1>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#jiao-xue-li-nian" class="text-gray-700 hover:text-primario font-medium transition-colors">為何與眾不同</a>
-                <a href="#wei-he-xue-xi" class="text-gray-700 hover:text-primario font-medium transition-colors">為何學拉丁文</a>
-                <a href="#xue-xi-xiao-yi" class="text-gray-700 hover:text-primario font-medium transition-colors">思維訓練</a>
-                <a href="#guan-yu-dao-shi" class="text-gray-700 hover:text-primario font-medium transition-colors">關於導師</a>
-                <a href="#lian-luo-wo-men" class="text-gray-700 hover:text-primario font-medium transition-colors">聯絡我們</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#jiao-xue-li-nian" class="text-academic-text hover:text-academic-accent transition-colors">教學理念</a>
+                <a href="#wei-he-xue-xi" class="text-academic-text hover:text-academic-accent transition-colors">為何學拉丁文</a>
+                <a href="#xue-xi-xiao-yi" class="text-academic-text hover:text-academic-accent transition-colors">思維訓練</a>
+                <a href="#faq" class="text-academic-text hover:text-academic-accent transition-colors">常見問題</a>
+                <a href="#guan-yu-dao-shi" class="text-academic-text hover:text-academic-accent transition-colors">關於導師</a>
+                <a href="#lian-luo-wo-men" class="text-academic-text hover:text-academic-accent transition-colors">聯絡我們</a>
             </nav>
         </div>
     </header>
 
     <main>
 
-        <!-- Hero Section ACTUALIZADO -->
-        <section class="bg-gradient-to-br from-primario to-primario-oscuro text-white py-20 md:py-28 text-center">
+        <!-- Hero Section -->
+        <section class="bg-academic-bg py-20 md:py-28 text-center">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-                    在 AI 時代，打造無法被取代的
-                    <br class="hidden md:block">
-                    <span class="text-secundario">深度思維</span>
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    在 AI 時代，打造無法被取代的<span class="text-academic-accent">深度思維</span>
                 </h2>
-                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                <p class="text-lg md:text-xl mt-6 mb-10 max-w-3xl mx-auto text-academic-text/80">
                     這是一場獻給未來的思維革命。我們的古典語言課程，是為孩子建立核心判斷力與創造力的最佳長期投資。
                 </p>
-                <a href="#lian-luo-wo-men" class="inline-block bg-white text-primario-oscuro py-3 px-8 rounded-full text-lg font-semibold transition-transform duration-300 hover:scale-105 shadow-lg">
+                <a href="#lian-luo-wo-men" class="inline-block bg-academic-primary text-white py-3 px-8 rounded-md text-lg font-semibold transition-colors hover:bg-academic-primary/90">
                     預約免費諮詢
                 </a>
             </div>
         </section>
 
-        <!-- Problem & Solution Section ACTUALIZADO -->
-        <section id="jiao-xue-li-nian" class="py-16 md:py-24 px-6 bg-gray-50">
-            <div class="container mx-auto max-w-5xl text-center">
-                <h3 class="section-heading">為何傳統學習模式已不足夠？</h3>
-                <p class="text-xl text-gray-600 mt-6 mb-12 max-w-3xl mx-auto">
-                    在短影音與即時娛樂侵蝕注意力的時代，孩子習慣接收資訊，卻缺乏拆解語言與論述背後邏輯的能力。
+        <!-- Problem & Solution Section -->
+        <section id="jiao-xue-li-nian" class="py-16 md:py-24 px-6 bg-white">
+            <div class="container mx-auto max-w-5xl">
+                <h3 class="section-heading">為何在 AI 時代，我們更需要學習拉丁文？</h3>
+                <p class="text-lg text-center text-academic-text/80 mt-6 mb-12 max-w-3xl mx-auto">
+                    今日的教育正面臨前所未有的困境。AI 技術崛起、短影音侵蝕心智，學習不再是沉潛建構，而成為焦躁的競速。這不僅是教材選擇的問題，而是整體教育思維模式的危機。
                 </p>
                 <div class="mt-12 grid md:grid-cols-2 gap-12 items-start text-left">
                     <div>
-                        <h4 class="text-2xl font-semibold text-gray-800 mb-4">當代教育的思維危機</h4>
-                        <p class="text-lg leading-relaxed mb-4">
-                            在 AI 可以快速整理資訊的今日，<b>思辨與判斷能力的缺席</b>，將讓孩子日益失去與 AI 抗衡的內在底氣。他們能從海量資料中找到「答案」，卻無法建立語言與思維的骨架；能模仿語句，卻缺乏質疑 AI 的獨立思路。
+                        <h4 class="text-2xl font-bold mb-4">當代教育的思維危機</h4>
+                        <p class="text-lg leading-relaxed mb-4 text-academic-text/90">
+                            我們的孩子習慣接收資訊，卻不習慣處理、整合與辨識。在 AI 可以快速整理資訊的今日，<b>思辨與判斷能力的缺席</b>，將讓孩子日益失去與 AI 抗衡的內在底氣。
                         </p>
-                        <p class="text-lg leading-relaxed">
-                            這種快速、破碎的知識流，讓學習成為焦躁的追趕，而非深度的建構。問題的根本在於，我們的教育缺乏一門能系統性訓練語言、邏輯與文化根基的學科。
+                        <p class="text-lg leading-relaxed text-academic-text/90">
+                            他們能從海量資料中找到「答案」，卻無法建立語言與思維的骨架；能模仿語句，卻缺乏質疑 AI 的獨立思路。問題的根本在於，當代教育缺乏一門能系統性訓練語言、邏輯與文化根基的學科。
+                            <a href="#" id="openModal" class="text-academic-accent hover:underline font-semibold block mt-3">閱讀全文...</a>
                         </p>
                     </div>
                     <div>
-                        <h4 class="text-2xl font-semibold text-gray-800 mb-4">我們的解方：一場深刻的思維訓練</h4>
-                        <p class="text-lg leading-relaxed mb-4">
-                            我們需要的，是一種能為語言賦予邏輯，為思維注入秩序的訓練。拉丁文，正是這樣一把<b>「思考的鑰匙」</b>。我們的教學核心，是透過這把鑰匙，為學生進行一對一的深度指導。
+                        <h4 class="text-2xl font-bold mb-4">我們的解方：一把「思考的鑰匙」</h4>
+                        <p class="text-lg leading-relaxed mb-4 text-academic-text/90">
+                            我們需要一種能為語言賦予邏輯，為思維注入秩序的訓練。拉丁文，正是這樣一把<b>「思考的鑰匙」</b>。它不僅是古典語言，更是現代學科語言的源頭，承載著邏輯、文法、修辭、歷史與哲學的交會點。
                         </p>
                         <ul class="space-y-3 text-lg">
-                            <li class="flex items-start"><span class="font-semibold text-primario mr-2">✓</span><span><b>個人化進度：</b>完全根據您的吸收速度調整，確保每個概念都真正內化，而非囫囵吞棗。</span></li>
-                            <li class="flex items-start"><span class="font-semibold text-primario mr-2">✓</span><span><b>專注於精通：</b>目標是建立扎實的思維骨架，而不僅僅是「涵蓋」課程內容。</span></li>
-                            <li class="flex items-start"><span class="font-semibold text-primario mr-2">✓</span><span><b>深度對話式教學：</b>由經驗豐富的導師引導，確保您不僅學會語言，更學會如何思考。</span></li>
+                            <li class="flex items-start"><span class="text-academic-accent mr-3 mt-1">◆</span><span><b>個人化進度：</b>完全根據您的吸收速度調整，確保每個概念都真正內化。</span></li>
+                            <li class="flex items-start"><span class="text-academic-accent mr-3 mt-1">◆</span><span><b>專注於精通：</b>目標是建立扎實的思維骨架，而不僅僅是「涵蓋」課程內容。</span></li>
+                            <li class="flex items-start"><span class="text-academic-accent mr-3 mt-1">◆</span><span><b>深度對話式教學：</b>由經驗豐富的導師引導，確保您不僅學會語言，更學會如何思考。</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why Classics Section ACTUALIZADO -->
-        <section id="wei-he-xue-xi" class="py-16 md:py-24 px-6">
+        <!-- Why Classics Section -->
+        <section id="wei-he-xue-xi" class="py-16 md:py-24 px-6 bg-academic-bg">
             <div class="container mx-auto max-w-5xl text-center">
-                <h3 class="section-heading">為何是拉丁文？—— 通往跨域思維的智慧之橋</h3>
-                <p class="text-xl text-gray-600 mt-6 mb-12 max-w-3xl mx-auto">
-                    拉丁文不僅是古典語言，更是現代學科語言的源頭。它承載著邏輯、文法、修辭、歷史與哲學的交會點，是古代思維與現代學科之間隱而堅實的橋樑。
+                <h3 class="section-heading">通往跨域思維的智慧之橋</h3>
+                <p class="text-lg text-academic-text/80 mt-6 mb-12 max-w-3xl mx-auto">
+                    選擇拉丁文，不僅僅是多學一種語言，而是讓孩子握有一把穿越古今、連結知識與文化的鑰匙。這種學習看似緩慢，卻能培養出最深遠的後勁。
                 </p>
                 <div class="grid md:grid-cols-3 gap-8 text-left">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                        <h4 class="text-xl font-semibold text-primario mb-3">看見知識的思維 DNA</h4>
-                        <p>學習拉丁文能破除學科間的界線，讓您看見各學科根本理論間的橫向連結，培養真正的跨域整合與思考能力。</p>
+                    <div class="bg-white p-6 rounded-md border border-gray-200">
+                        <h4 class="text-xl font-bold mb-3">看見知識的思維 DNA</h4>
+                        <p class="text-academic-text/90">破除學科間的界線，看見各學科根本理論間的橫向連結，培養真正的跨域整合與思考能力。</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                        <h4 class="text-xl font-semibold text-primario mb-3">鍛鍊專注與邏輯耐力</h4>
-                        <p>在注意力稀缺的時代，分析拉丁文的嚴謹句法能有效鍛鍊您的專注力，以及處理複雜訊息的邏輯持續力。</p>
+                    <div class="bg-white p-6 rounded-md border border-gray-200">
+                        <h4 class="text-xl font-bold mb-3">鍛鍊專注與邏輯耐力</h4>
+                        <p class="text-academic-text/90">在一句話的結構中訓練耐心，鍛鍊在注意力稀缺時代中處理複雜訊息的專注與邏輯持續力。</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                        <h4 class="text-xl font-semibold text-primario mb-3">與西方文明深度對話</h4>
-                        <p>透過閱讀原典，您將建立對古典文化的理解與敬意，培養文化對話力與內在自信，奠定未來領導力的基礎。</p>
+                    <div class="bg-white p-6 rounded-md border border-gray-200">
+                        <h4 class="text-xl font-bold mb-3">與西方文明深度對話</h4>
+                        <p class="text-academic-text/90">從原典中學會與文明對話，建立對古典文化的理解與敬意，培養文化對話力與內在文化自信。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits Section ACTUALIZADO -->
-        <section id="xue-xi-xiao-yi" class="py-16 md:py-24 px-6 bg-gray-50">
+        <!-- Benefits Section -->
+        <section id="xue-xi-xiao-yi" class="py-16 md:py-24 px-6 bg-white">
             <div class="container mx-auto max-w-4xl text-center">
                 <h3 class="section-heading">您將學會如何深度思考</h3>
-                <p class="text-xl text-gray-600 mt-6 mb-12 max-w-3xl mx-auto">
-                    這種學習看似緩慢，卻能培養出最深遠的後勁。它讓孩子學會：
+                <p class="text-lg text-academic-text/80 mt-6 mb-12 max-w-3xl mx-auto">
+                    透過拉丁文的訓練，孩子不只學會如何應對 AI 挑戰，更將擁有迎向未來的創造力、判斷力與領導潛能。
                 </p>
                 <div class="mt-12 grid md:grid-cols-1 gap-6 text-left">
-                    <div class="bg-white p-6 rounded-lg shadow-sm flex items-start space-x-4">
-                        <div class="text-3xl text-secundario">→</div>
+                    <div class="bg-academic-bg p-6 rounded-md border border-gray-200 flex items-start space-x-4">
+                        <span class="text-2xl text-academic-accent mt-1">→</span>
                         <div>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-1">洞察語言的底層結構</h4>
-                            <p>從字詞的變化中，看見歐洲語言之間的分歧與同源，進而洞察語言結構如何映照各民族的思維方式。</p>
+                            <h4 class="text-xl font-bold mb-1">洞察語言的底層結構</h4>
+                            <p class="text-academic-text/90">從字詞的變化中，看見歐洲語言之間的分歧與同源，進而洞察語言結構如何映照各民族的思維方式與想像力。</p>
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm flex items-start space-x-4">
-                        <div class="text-3xl text-secundario">→</div>
+                    <div class="bg-academic-bg p-6 rounded-md border border-gray-200 flex items-start space-x-4">
+                        <span class="text-2xl text-academic-accent mt-1">→</span>
                         <div>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-1">建立根本思維的比較力</h4>
-                            <p>在語法、語序與邏輯的差異中，培養出比較不同思維體系的能力，理解世界不只有一種觀看方式。</p>
+                            <h4 class="text-xl font-bold mb-1">建立根本思維的比較力</h4>
+                            <p class="text-academic-text/90">在語法、語序與邏輯的差異中，培養出比較不同思維體系的能力，理解世界不只有一種觀看方式。</p>
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm flex items-start space-x-4">
-                        <div class="text-3xl text-secundario">→</div>
+                    <div class="bg-academic-bg p-6 rounded-md border border-gray-200 flex items-start space-x-4">
+                        <span class="text-2xl text-academic-accent mt-1">→</span>
                         <div>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-1">培養未來的核心素養</h4>
-                            <p>透過拉丁文的嚴謹訓練，您不只學會應對 AI 挑戰，更將擁有迎向未來的創造力、判斷力與領導潛能。</p>
+                            <h4 class="text-xl font-bold mb-1">培養未來的核心素養</h4>
+                            <p class="text-academic-text/90">它所培養的，不僅是語言能力，更是思想深度、文化根基與精神的堅實結構。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About the Tutor Section con alt text mejorado -->
-        <section id="guan-yu-dao-shi" class="py-16 md:py-24 px-6">
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 md:py-24 px-6 bg-academic-bg">
+            <div class="container mx-auto max-w-4xl">
+                <h3 class="section-heading text-center">常見問題 (FAQ)</h3>
+                <div class="mt-12 space-y-2">
+                    <!-- Pregunta 1 -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-md">
+                        <button class="accordion-header w-full text-left p-5 flex justify-between items-center text-lg font-bold text-academic-primary hover:bg-gray-50">
+                            <span>Q1：學拉丁文的條件和適當年齡？</span>
+                            <svg class="w-5 h-5 text-academic-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 pt-0 text-academic-text/90 leading-relaxed">
+                                <p>只要有基礎英文文法基礎即可開始，抱持著「好學」且「願意長期不中斷學習的心」就是最好的條件。原則上，語言學習貴在早點開始接觸及長時間的透入，所以越早開始越好。鑑於中文為母語的孩子大約在十歲以後有基礎的英文文法基礎且有基本的學習自律力，因此建議學習起始年歲為十歲以上。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pregunta 2 -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-md">
+                        <button class="accordion-header w-full text-left p-5 flex justify-between items-center text-lg font-bold text-academic-primary hover:bg-gray-50">
+                            <span>Q2：用中文學習拉丁文可行嗎？</span>
+                            <svg class="w-5 h-5 text-academic-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 pt-0 text-academic-text/90 leading-relaxed">
+                                <p>在語言學習中，能用母語來學習都是最好的途徑，不需要在理解基本意思的步驟上更費勁。當然中文在意思的精準度上有所差距，因此老師時而根據學生理解狀況借英文的文法和句型概念輔以說明。雖然英文或擁有其他歐語能力有利於拉丁文的學習，在意思理解反應上會快些；但沒有明確的數據或研究顯示其有絕對優勢。且依據老師教學四五年的經驗，英文或歐語能力好並不一定拉丁文能學得好，關鍵還是在於學習者自身的動力和持之以恆的堅持。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pregunta 3 -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-md">
+                        <button class="accordion-header w-full text-left p-5 flex justify-between items-center text-lg font-bold text-academic-primary hover:bg-gray-50">
+                            <span>Q3：這個課程會不會影響孩子其他科目的學習時間？</span>
+                            <svg class="w-5 h-5 text-academic-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 pt-0 text-academic-text/90 leading-relaxed">
+                                <p>就學業發展而言，拉丁文的學習是「乘法式」的投資，並非「加法式」的負擔。許多資優班與國際文憑（IB）課程都將拉丁文列為增強語言能力與邏輯思維的核心學科。英文詞源（以及其他歐語的語言）、現代學科的術語與理論發展都有大量的拉丁文足跡，因此學習拉丁文能節省孩子大量記憶與理解成本，對於培養高層次學術思考力的過程中起了關鍵性的作用。短期內可能需要些對於時間調度的配合和調整，但長遠看來是「節能增效」的利器。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More questions... -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About the Tutor Section -->
+        <section id="guan-yu-dao-shi" class="py-16 md:py-24 px-6 bg-white">
             <div class="container mx-auto max-w-4xl text-center">
                 <img src="https://github.com/magisterha/magisterha.github.io/raw/main/Foto%20de%20Tamkang.png" 
                      alt="導師 Javier Caramés Sánchez (哈偉爾) 的照片" 
-                     class="w-40 h-40 rounded-full object-cover mx-auto mb-6 shadow-lg border-4 border-white">
+                     class="w-40 h-40 rounded-full object-cover mx-auto mb-6 border-4 border-white shadow-md">
 
                 <h3 class="section-heading">關於導師：Javier Caramés Sánchez (哈偉爾)</h3>
                 <div class="mt-12 grid md:grid-cols-2 gap-12 text-left">
-                    <!-- Teaching Experience -->
                     <div>
-                        <h4 class="text-2xl font-semibold text-primario mb-6 border-b-2 border-primario pb-2">教學經驗</h4>
+                        <h4 class="text-2xl font-bold mb-4 border-b-2 border-academic-primary/20 pb-2">教學經驗</h4>
                         <div class="space-y-6">
                             <div>
-                                <h5 class="text-xl font-bold text-gray-800">淡江大學 (2012-2015)</h5>
-                                <p class="text-lg text-gray-600">西班牙文系</p>
-                                <p class="text-md text-gray-500">西班牙文、拉丁文及古希臘文講師</p>
+                                <h5 class="text-xl font-bold">淡江大學 (2012-2015)</h5>
+                                <p class="text-lg text-academic-text/80">西班牙文、拉丁文及古希臘文講師</p>
                             </div>
                             <div>
-                                <h5 class="text-xl font-bold text-gray-800">IE大學 (2016-2017)</h5>
-                                <p class="text-lg text-gray-600">語言中心</p>
-                                <p class="text-md text-gray-500">西班牙文、拉丁文及古希臘文講師</p>
+                                <h5 class="text-xl font-bold">IE大學 (2016-2017)</h5>
+                                <p class="text-lg text-academic-text/80">西班牙文、拉丁文及古希臘文講師</p>
                             </div>
                             <div>
-                                <h5 class="text-xl font-bold text-gray-800">自由職業線上教學 (2017 - 現在)</h5>
-                                <p class="text-md text-gray-500">西班牙文、拉丁文和古希臘文教師</p>
+                                <h5 class="text-xl font-bold">自由職業線上教學 (2017 - 現在)</h5>
+                                <p class="text-lg text-academic-text/80">西班牙文、拉丁文和古希臘文教師</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Education -->
                     <div>
-                        <h4 class="text-2xl font-semibold text-primario mb-6 border-b-2 border-primario pb-2">學歷</h4>
+                        <h4 class="text-2xl font-bold mb-4 border-b-2 border-academic-primary/20 pb-2">學歷</h4>
                         <div class="space-y-6">
                             <div>
-                                <h5 class="text-xl font-bold text-gray-800">薩拉曼卡大學拉丁文及古希臘文系</h5>
-                                <p class="text-lg text-gray-600">學士 (2007)</p>
-                                <p class="text-lg text-gray-600">碩士 (2007)</p>
+                                <h5 class="text-xl font-bold">薩拉曼卡大學拉丁文及古希臘文系</h5>
+                                <p class="text-lg text-academic-text/80">學士 (2007), 碩士 (2007)</p>
                             </div>
                             <div>
-                                <h5 class="text-xl font-bold text-gray-800">馬德里自治大學的東方學</h5>
-                                <p class="text-lg text-gray-600">學士 (2011)</p>
+                                <h5 class="text-xl font-bold">馬德里自治大學的東方學</h5>
+                                <p class="text-lg text-academic-text/80">學士 (2011)</p>
                             </div>
                             <div>
-                                <h5 class="text-xl font-bold text-gray-800">國立台灣大學中國文學系</h5>
-                                <p class="text-lg text-gray-600">碩士 (2014)</p>
-                                <p class="text-lg text-gray-600">博士 (目前正在修習中)</p>
+                                <h5 class="text-xl font-bold">國立台灣大學中國文學系</h5>
+                                <p class="text-lg text-academic-text/80">碩士 (2014), 博士 (修習中)</p>
                             </div>
                         </div>
                     </div>
@@ -219,35 +284,112 @@
             </div>
         </section>
 
-        <!-- Call to Action / Contact Section ACTUALIZADO -->
-        <section id="lian-luo-wo-men" class="bg-gradient-to-br from-primario to-primario-oscuro text-white py-20 md:py-28">
+        <!-- Call to Action / Contact Section -->
+        <section id="lian-luo-wo-men" class="bg-academic-bg py-20 md:py-28">
             <div class="container mx-auto px-6 max-w-3xl text-center">
-                <h3 class="text-white">為您的未來，做一項值得的長期投資</h3>
-                <p class="text-xl mt-4 mb-8 opacity-90">
-                    在這場關乎人類核心能力的時代抉擇中，學習古典語言是值得的長期投資。它所培養的，不僅是語言能力，更是思想深度、文化根基與精神的堅實結構。
-                    <br><br>
-                    如果您準備好開始這趟智識之旅，請填寫表單，邁出第一步。
+                <h3 class="section-heading">開啟您的智識之旅</h3>
+                <p class="text-lg mt-6 mb-8 text-academic-text/80">
+                    在這場關乎人類核心能力的時代抉擇中，學習古典語言是值得的長期投資。它所培養的，不僅是語言能力，更是思想深度、文化根基與精神的堅實結構。如果您準備好邁出第一步，請填寫表單。
                 </p>
                 
-                <!-- Formulario de Google Integrado con title para accesibilidad -->
-                <div class="bg-white p-2 rounded-lg shadow-xl max-w-2xl mx-auto">
+                <div class="bg-white p-2 rounded-lg border border-gray-200 max-w-2xl mx-auto mt-8">
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchZV4MfL0RxCR4mYrBaRFtsOAT-j3AVfwl4ueyx6dshyakCQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="課程諮詢聯絡表單">正在載入…</iframe>
                 </div>
 
-                <!-- Recuerda reemplazar "URL-DE-TU-PAGINA-DE-FACEBOOK" con tu enlace real -->
-                <p class="mt-8 text-lg opacity-90">或透過 <a href="URL-DE-TU-PAGINA-DE-FACEBOOK" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-200">Facebook</a> 訪問我們，或發送郵件至 <a href="mailto:caramessanchez@hotmail.com" class="underline hover:text-gray-200">caramessanchez@hotmail.com</a></p>
+                <p class="mt-8 text-lg text-academic-text/80">或透過 <a href="URL-DE-TU-PAGINA-DE-FACEBOOK" target="_blank" rel="noopener noreferrer" class="underline hover:text-academic-accent">Facebook</a> 訪問我們，或發送郵件至 <a href="mailto:caramessanchez@hotmail.com" class="underline hover:text-academic-accent">caramessanchez@hotmail.com</a></p>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-footer-bg text-white py-12 text-center">
+    <footer class="bg-academic-footer text-white py-12 text-center">
         <div class="container mx-auto px-6">
-            <p>&copy; 2025 拉丁文與古典希臘文課程。版權所有。</p>
-            <p class="mt-2 text-sm opacity-80">為智識卓越而設計。</p>
+            <p>&copy; 2025 智識卓越 | 拉丁文與古典希臘文課程</p>
+            <p class="mt-4 text-sm opacity-80">Página creada por Javier Caramés Sánchez y Eugenie Leight.</p>
+            <p class="mt-2 text-sm opacity-70">為深度思維而設計。</p>
         </div>
     </footer>
 
+    <!-- MODAL PARA EL ARTÍCULO COMPLETO -->
+    <div id="fullArticleModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden items-center justify-center p-4" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="bg-academic-bg rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative font-serif">
+            <button id="closeModal" class="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-4xl font-light">&times;</button>
+            <h3 id="modal-title" class="text-2xl md:text-3xl font-bold text-academic-primary mb-6">為何在 AI 時代，我們更需要學習拉丁文？—— 一場獻給未來的思維革命</h3>
+            <div class="text-lg text-academic-text space-y-4 leading-relaxed">
+                <p>今日的教育正面臨前所未有的困境。</p>
+                <p>時代劇烈變動，經濟與職涯充滿不確定；AI 技術急速崛起；短影音與即時娛樂不斷侵蝕孩子的心智注意力。這些挑戰看似分散，實則互為因果，伴隨共伴效應堆疊出一種集體焦慮與教育無力感。</p>
+                <p>家長不安，教師焦慮，而學生則在破碎、高速的知識流中逐漸失去方向。學習不再是沉潛與建構，而成為焦躁與追趕的競速。</p>
+                <p>若深究這一切的根源，我們會發現：這不僅是教材選擇或學科配置的問題，而是整體教育思維模式的危機。</p>
+                <p>我們的孩子習慣接收資訊，卻不習慣處理、整合與辨識資訊。他們穿梭於多樣而高速的訊息之中，卻缺乏拆解語言與論述背後邏輯的能力。</p>
+                <p>在 AI 可以快速整理與重組資訊的今日，這種思辨與判斷能力的缺席，將讓孩子日益失去與AI抗衡的內在底氣。</p>
+                <p>他們能從海量資料中找到「答案」，卻無法建立語言與思維的骨架；他們能模仿語句，卻缺乏質疑AI的獨立思路。</p>
+                <p>他們的語言是快的，是淺的，而深化思維的學習之路卻遍布障礙。</p>
+                <p>問題的根本在於：當代教育缺乏一門能系統性訓練語言、邏輯與文化根基的學科——孩子缺乏可依循的思路訓練方法，來面對這個高速複雜的世界。</p>
+                <p>鑑於此，我們需要一種超越現行學科框架的教育選擇：一種能為語言賦予邏輯，為思維注入秩序，為文化建構深度的訓練方式。</p>
+                <p>拉丁文，正是這樣的語言。它不只是古典語言的象徵，更是現代學科語言的源頭。它承載邏輯、文法、修辭、歷史與哲學的交會點，成為古代思維與現代學科之間隱而堅實的橋樑。</p>
+                <p>選擇拉丁文，不僅僅是多學一種語言；而是讓孩子握有一把「思考的鑰匙」——穿越古今、連結知識與文化的鑰匙。</p>
+                <p class="font-semibold mt-6">在當前教育的高速與碎片化中，這樣的學習看似緩慢，卻能培養出最深遠的後勁。它讓孩子學會：</p>
+                <ul class="list-disc list-inside space-y-3 pl-4">
+                    <li>從字詞的變化中，看見歐洲語言之間的分歧與同源，進而洞察語言結構如何映照各民族的思維方式與想像力。</li>
+                    <li>在一句話的結構中訓練耐心，鍛鍊在注意力稀缺時代中，專注與語法邏輯的持續力。</li>
+                    <li>從原典中學會與文明對話，建立對古典文化的理解與敬意，培養文化對話力與內在文化自信，奠定領導力基礎。</li>
+                    <li>在現代多學科間，看見知識體系的思維DNA，破除學科間的界線，在各學科根本理論間形成橫向整合力與跨域思維力。</li>
+                    <li>理解現代語言思維之外的另一種世界，在語法、語序與邏輯的差異中，培養「對『根本思維邏輯』的比較力」。</li>
+                </ul>
+                <p class="mt-6">透過拉丁文的訓練，孩子不只學會如何應對 AI 帶來的挑戰，更擁有迎向未來的創造力、判斷力與領導潛能。</p>
+                <p>在這場關於人類核心能力的時代抉擇中，拉丁文是一門值得長期投資的教育選擇。它所培養的，不僅是語言能力，更是思想深度、文化根基與精神的堅實結構。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // --- SCRIPT PARA EL MODAL ---
+        const openModalBtn = document.getElementById('openModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modal = document.getElementById('fullArticleModal');
+
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        });
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && !modal.classList.contains('hidden')) closeModal();
+        });
+
+        // --- SCRIPT PARA EL ACORDEÓN (FAQ) ---
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isOpen = content.style.maxHeight;
+
+                // Cerrar todos los acordeones
+                accordionHeaders.forEach(h => {
+                    h.nextElementSibling.style.maxHeight = null;
+                    h.classList.remove('open');
+                });
+                
+                // Abrir el actual si estaba cerrado
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    header.classList.add('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
