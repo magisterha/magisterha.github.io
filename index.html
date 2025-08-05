@@ -57,7 +57,7 @@
             transition: max-height 0.3s ease-out;
         }
         .accordion-header svg {
-             transition: transform 0.3s ease-out;
+            transition: transform 0.3s ease-out;
         }
         .accordion-header.open svg {
             transform: rotate(180deg);
@@ -240,11 +240,29 @@
         <!-- About the Tutor Section -->
         <section id="guan-yu-dao-shi" class="py-16 md:py-24 px-6 bg-white">
             <div class="container mx-auto max-w-4xl text-center">
-                <img src="https://github.com/magisterha/magisterha.github.io/raw/main/Foto%20de%20Tamkang.png" 
-                     alt="導師 Javier Caramés Sánchez (哈偉爾) 的照片" 
-                     class="w-40 h-40 rounded-full object-cover mx-auto mb-6 border-4 border-white shadow-md">
+                <!-- Se ha agregado un contenedor para la imagen y los enlaces de redes sociales -->
+                <div class="relative inline-block">
+                    <img src="https://github.com/magisterha/magisterha.github.io/raw/main/Foto%20de%20Tamkang.png" 
+                         alt="導師 Javier Caramés Sánchez (哈偉爾) 的照片" 
+                         class="w-40 h-40 rounded-full object-cover mx-auto mb-6 border-4 border-white shadow-md">
+                    <!-- Contenedor para los iconos de redes sociales. Se ha ajustado la posición para que queden sobre la foto. -->
+                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+                        <!-- Enlace de Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=100064221575778" target="_blank" rel="noopener noreferrer" 
+                           class="w-9 h-9 bg-academic-primary text-white flex items-center justify-center rounded-full transition-transform transform hover:scale-110">
+                            <!-- Icono de Facebook (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <!-- Enlace de Instagram -->
+                        <a href="https://www.instagram.com/magister_xaverius/" target="_blank" rel="noopener noreferrer" 
+                           class="w-9 h-9 bg-academic-primary text-white flex items-center justify-center rounded-full transition-transform transform hover:scale-110">
+                            <!-- Icono de Instagram (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                    </div>
+                </div>
 
-                <h3 class="section-heading">關於導師：Javier Caramés Sánchez (哈偉爾)</h3>
+                <h3 class="section-heading mt-6">關於導師：Javier Caramés Sánchez (哈偉爾)</h3>
                 <div class="mt-12 grid md:grid-cols-2 gap-12 text-left">
                     <div>
                         <h4 class="text-2xl font-bold mb-4 border-b-2 border-academic-primary/20 pb-2">教學經驗</h4>
@@ -296,7 +314,12 @@
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchZV4MfL0RxCR4mYrBaRFtsOAT-j3AVfwl4ueyx6dshyakCQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="課程諮詢聯絡表單">正在載入…</iframe>
                 </div>
 
-                <p class="mt-8 text-lg text-academic-text/80">或透過 <a href="URL-DE-TU-PAGINA-DE-FACEBOOK" target="_blank" rel="noopener noreferrer" class="underline hover:text-academic-accent">Facebook</a> 訪問我們，或發送郵件至 <a href="mailto:caramessanchez@hotmail.com" class="underline hover:text-academic-accent">caramessanchez@hotmail.com</a></p>
+                <!-- Se ha modificado esta sección para incluir el enlace a Instagram -->
+                <p class="mt-8 text-lg text-academic-text/80">
+                    或透過 <a href="https://www.facebook.com/profile.php?id=100064221575778" target="_blank" rel="noopener noreferrer" class="underline hover:text-academic-accent">Facebook</a> 訪問我們, 
+                    或在 <a href="https://www.instagram.com/magister_xaverius/" target="_blank" rel="noopener noreferrer" class="underline hover:text-academic-accent">Instagram</a> 上關注我們, 
+                    或發送郵件至 <a href="mailto:caramessanchez@hotmail.com" class="underline hover:text-academic-accent">caramessanchez@hotmail.com</a>
+                </p>
             </div>
         </section>
 
