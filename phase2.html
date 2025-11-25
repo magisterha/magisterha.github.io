@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase II: Poder - Curriculum Magnum</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="language-bar">
+        <button onclick="setPhaseLanguage('la')">Latina</button>
+        <button onclick="setPhaseLanguage('es')">Español</button>
+        <button onclick="setPhaseLanguage('en')">English</button>
+        <button onclick="setPhaseLanguage('zh')">繁體中文</button>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1 data-i18n="p2_title">Fase II: Poder & Estructura</h1>
+            <p class="subtitle" data-i18n="p2_years">Años 14-16 | Lógica Militar y Oratoria</p>
+        </header>
+
+        <main>
+            <section class="intro">
+                <p data-i18n="p2_intro">La gramática se convierte en lógica aplicada. Analizamos cómo César y Cicerón construían sus argumentos para liderar Roma. Énfasis en precisión y estructura.</p>
+            </section>
+
+            <hr class="divider">
+
+            <section class="syllabus">
+                <h3 data-i18n="syllabus_header">Plan de Estudios</h3>
+                <table class="syllabus-table">
+                    <tr>
+                        <td class="col-year" data-i18n="year3">Año 3</td>
+                        <td data-i18n="content_y3">Julio César: De Bello Gallico (Libros I, IV, V). Sintaxis Militar, Ablativo Absoluto y Estilo Indirecto.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-year" data-i18n="year4">Año 4</td>
+                        <td data-i18n="content_y4">Cicerón: Catilinarias y Pro Archia. Retórica, Figuras de Dicción y Argumentación lógica.</td>
+                    </tr>
+                </table>
+            </section>
+
+            <div style="margin-top: 40px;">
+                <a href="index.html" class="back-button" data-i18n="btn_back">← Volver al Inicio</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Curriculum Magnum Latinum</p>
+        </footer>
+    </div>
+
+    <script src="phases.js"></script>
+</body>
+</html>
