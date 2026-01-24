@@ -14,14 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <script>
+      // Configuración de colores adaptada a las nuevas imágenes
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: { 'serif': ['Merriweather', 'serif'] },
             colors: {
-              'academic-bg': '#FDFBF6', 'academic-text': '#3C3633',
-              'academic-primary': '#4A6982', 'academic-accent': '#76323F',
-              'academic-footer': '#333A45',
+              'academic-bg': '#FDFBF6', 
+              'academic-text': '#3C3633',
+              // Nuevo azul profundo extraído del logo
+              'academic-primary': '#1A3A5F', 
+              // Nuevo rojo terracota extraído del tejado del templo
+              'academic-accent': '#A63D2D',
+              'academic-footer': '#122842',
             }
           }
         }
@@ -41,9 +46,13 @@
 </head>
 <body>
 
-    <header class="bg-academic-bg/80 backdrop-blur-sm shadow-sm py-4 px-6 md:px-12 border-b border-gray-200 sticky top-0 z-50">
+    <header class="bg-academic-bg/90 backdrop-blur-sm shadow-sm py-3 px-6 md:px-12 border-b border-gray-200 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl md:text-3xl" data-translate="header_title">智識卓越</h1>
+            <a href="#" class="flex items-center space-x-4">
+                <img src="Arma Virumque Cano ( Logo) copia 2.png" alt="Logo Arma Virumque Cano" class="h-14 w-auto">
+                <h1 class="text-2xl md:text-3xl" data-translate="header_title">智識卓越</h1>
+            </a>
+            
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#jiao-xue-li-nian" class="text-academic-text hover:text-academic-accent transition-colors" data-translate="nav_philosophy">教學理念</a>
                 <a href="#wei-he-xue-xi" class="text-academic-text hover:text-academic-accent transition-colors" data-translate="nav_why_latin">為何學拉丁文</a>
@@ -64,15 +73,18 @@
 
     <main>
 
-        <section class="bg-academic-bg py-20 md:py-28 text-center">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                    <span data-translate="hero_title_part1">在 AI 時代，打造無法被取代的</span><span class="text-academic-accent" data-translate="hero_title_part2">深度思維</span>
+        <section class="relative bg-academic-primary text-center text-white py-28 md:py-40 bg-cover bg-center" style="background-image: url('Templo griego horizontal.jpg');">
+            <div class="absolute inset-0 bg-black/40"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4 text-white shadow-sm">
+                    <span data-translate="hero_title_part1">在 AI 時代，打造無法被取代的</span>
+                    <span class="text-academic-accent drop-shadow-md" data-translate="hero_title_part2">深度思維</span>
                 </h2>
-                <p class="text-lg md:text-xl mt-6 mb-10 max-w-3xl mx-auto text-academic-text/80" data-translate="hero_subtitle">
+                <p class="text-lg md:text-xl mt-6 mb-10 max-w-3xl mx-auto text-white/90 font-medium shadow-sm" data-translate="hero_subtitle">
                     這是一場獻給未來的思維革命。我們的古典語言課程，是為孩子建立核心判斷力與創造力的最佳長期投資。
                 </p>
-                <a href="#lian-luo-wo-men" class="inline-block bg-academic-primary text-white py-3 px-8 rounded-md text-lg font-semibold transition-colors hover:bg-academic-primary/90" data-translate="hero_cta">
+                <a href="#lian-luo-wo-men" class="inline-block bg-academic-accent hover:bg-academic-accent/90 text-white py-3 px-8 rounded-md text-lg font-semibold transition-colors shadow-lg" data-translate="hero_cta">
                     預約免費諮詢
                 </a>
             </div>
